@@ -42,6 +42,8 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: auto;
+    background: url("../img/edit2.jpg") 
+    cover no-repeat 
 }
 
 main {
@@ -590,19 +592,19 @@ section.gallery .gallery {
 
   background-image:
     linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/galeria-1.jpg");
+    url("../img/edit2.jpg");
 }
 
 .galleria-2 {
   background-image:
     linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/galeria-2.jpg");
+   url("../img/edit2.jpg");
 }
 
 .galleria-3 {
   background-image:
     linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/galeria-3.jpg");
+    url("../img/edit2.jpg");
 }
 
 /* Efecto al pasar el mouse */
