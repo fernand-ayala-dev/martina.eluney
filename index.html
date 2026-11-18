@@ -3,157 +3,237 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Te invito a celebrar mis 15 años. Una noche para recordar."
+    />
+
     <title>Mis 15 años | Eluney</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- JavaScript propio -->
     <script src="js/script.js" defer></script>
   </head>
+
   <body>
     <div class="fondo-animado">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
-    <main class="container p-5">
-      <section class="container fondo" id="inicio">
-        <div class="row">
-          <div class="col-12 col-lg-6">
+
+    <main class="container-fluid p-0">
+      <!-- INICIO -->
+      <section class="primera" id="inicio">
+        <div class="row align-items-center justify-content-center w-100">
+          <div class="col-12">
             <p class="frase">UNA FECHA · UN SUEÑO · UN RECUERDO</p>
           </div>
-          <div class="col-12 col-lg-6 p-2">
+
+          <div class="col-12 reveal">
             <h1>Martina</h1>
-            <p>Mis XV años</p>
           </div>
-          <div>
-            <p class="hero-date reveal">
-              09 <span>/</span> 01 <span>/</span> 2027
+          <div class="col-12 reveal">
+            <p class="quince">Mis 15 años</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRESENTACIÓN -->
+      <section class="segunda">
+        <div class="row justify-content-center p-2">
+          <div class="col-12 col-lg-8">
+            <h2>
+              Hay momentos que<br />
+              merecen ser celebrados.
+            </h2>
+          </div>
+          <div class="col-12 col-lg-8">
+            <p>
+              Comienza un nuevo capítulo, lleno de ilusiones, emociones y nuevos
+              sueños por cumplir.
             </p>
           </div>
         </div>
       </section>
-      <section class="container">
-        <h2>Hay momentos que<br /><em>merecen ser celebrados.</em></h2>
-        <p>
-          Hoy dejo atrás una hermosa etapa de mi vida, llena de sueños, juegos y
-          momentos inolvidables. Comienza un nuevo capítulo, lleno de ilusiones,
-          emociones y nuevos sueños por cumplir. Quiero celebrar este momento
-        </p>
-        <div></div>
-        <p>
-          Quiero celebrar este momento tan especial rodeada de las personas que
-          quiero y que forman parte de mi historia. ¡Me encantaría que seas
-          parte de esta noche mágica!
-        </p>
-      </section>
-      <section class="container">
-        <div class="foto-principal reveal">
-          <div
-            class="foto-prin"
-            role="img"
-            aria-label="Fotografía de Eluney"
-          ></div>
-          <div class="foto-caption">
-            <span class="small-line">-</span>
-            <span>TE INVITO A CELEBRAR CONMIGO</span>
-            <span class="small-line">-</span>
+
+      <!-- FOTOGRAFÍA PRINCIPAL -->
+      <section class="tercera-foto">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <i class="fa-solid fa-moon p-2"></i>
+            <h2>Una noche soñada...</h2>
+            <div class="foto-principal reveal">
+              <div
+                class="foto-prin"
+                role="img"
+                aria-label="Fotografía de Eluney"
+              ></div>
+
+              <div class="foto-caption">
+                <p>TE INVITO A CELEBRAR CONMIGO</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="countdown-section section" id="cuenta">
-        <div class="section-inner reveal">
-          <p class="eyebrow">LA CUENTA REGRESIVA COMENZÓ</p>
-          <h2>Falta muy poquito</h2>
-          <div class="countdown" aria-label="Cuenta regresiva">
-            <div class="count-item">
-              <strong id="days">---</strong><span>DÍAS</span>
-            </div>
-            <div class="count-item">
-              <strong id="hours">--</strong><span>HORAS</span>
-            </div>
-            <div class="count-item">
-              <strong id="minutes">--</strong><span>MINUTOS</span>
-            </div>
-            <div class="count-item">
-              <strong id="seconds">--</strong><span>SEGUNDOS</span>
+      <!-- CUENTA REGRESIVA -->
+      <section class="cuarta-regresiva" id="cuenta">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-4">
+            <div class="section-inner reveal">
+              <h2>La cuenta regresiva comenzó</h2>
+
+              <div class="countdown" aria-label="Cuenta regresiva">
+                <div class="count-item">
+                  <strong id="days">---</strong>
+                  <span>DÍAS</span>
+                </div>
+
+                <div class="count-item">
+                  <strong id="hours">--</strong>
+                  <span>HORAS</span>
+                </div>
+
+                <div class="count-item">
+                  <strong id="minutes">--</strong>
+                  <span>MINUTOS</span>
+                </div>
+
+                <div class="count-item">
+                  <strong id="seconds">--</strong>
+                  <span>SEGUNDOS</span>
+                </div>
+              </div>
+              <h2>Falta muy poquito</h2>
+              <p class="countdown-note" id="countdownNote">
+                para la gran noche
+              </p>
             </div>
           </div>
-          <p class="countdown-note" id="countdownNote">para el gran dia</p>
         </div>
       </section>
 
-      <section class="container">
-        <div class="reveal">
-          <h2>Lugar y horario</h2>
-          <a href="/">lugar a confimar</a>
-          <p>horario de recepción</p>
-          <span>20:00</span>
-          <p>por favor ser puntual</p>
+      <!-- LUGAR Y HORARIO -->
+      <section class="quinta-datos p-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2>Mis quince años</h2>
+            <p>Se celebrará el día 9 de Enero en:</p>
+            <a
+              href="https://www.google.com/maps/place/Joliet+eventos/@-34.6132559,-58.6426122,17z/data=!4m6!3m5!1s0x95bcb94af4975d71:0xabc57155ec979f12!8m2!3d-34.6132559!4d-58.6400373!16s%2Fg%2F11h045tstw?entry=ttu&g_ep=EgoyMDI2MTExNS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn mb-2"
+              ><i class="fa-solid fa-location-dot p-2"></i> Joliet eventos</a
+            >
+            <br>
+            <em>Juana Azurduy 531, v.tesei</em>
+          </div>
+          <div class="col-12 col-lg-8">
+            <p>El evento comienza</p>
+            <span class="hora mb-2">21:30hs a 05:30hs</span>
+            <em>Por favor, ser puntual.</em>
+          </div>
         </div>
       </section>
 
-      <section class="container">
-        <h2>código de vestimenta</h2>
-        <img
-          src="img/dresscode.png"
-          class="icono-vestimenta"
-          alt="Dress-code"
-          width="200"
-        />
+      <!-- GALERÍA -->
+      <section class="galeria-section" id="galeria">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="section-inner reveal">
+              <h2>Mis recuerdos</h2>
 
-        <span>Elegante Sport / gala</span>
-        <p>No permitido usar color azul marino y similares</p>
+              <p class="body-copy mb-2">
+                Quince años de risas, aprendizajes y sueños.
+              </p>
+            </div>
+            <div class="col-12 col-lg-8">
+              <div class="gallery-grid">
+                <div class="galleria-1"></div>
+                <div class="galleria-2"></div>
+                <div class="galleria-3"></div>
+                <div class="galleria-4"></div>
+                <div class="galleria-5"></div>
+                <div class="galleria-6"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="gallery" id="galeria">
-        <div class="section-inner reveal">
-          <p class="eyebrow">UN POQUITO DE MÍ</p>
-          <h2>Mis recuerdos</h2>
-          <p class="body-copy">Quince años de risas, aprendizajes y sueños.</p>
-          <div class="gallery">
-            <!-- Reemplazá estos bloques por tus fotos. Ver instrucciones en README. -->
-            <div class="galleria-1"></div>
-            <div class="galleria-2"></div>
-            <div class="galleria-3"></div>
+      <!-- VESTIMENTA -->
+      <section class="septima-vestimenta">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12 col-lg-6">
+            <h2>Código de vestimenta</h2>
+
+            <img
+              src="img/dresscode.png"
+              class="icono-vestimenta"
+              alt="Código de vestimenta"
+              width="200"
+            />
           </div>
-          <div class="gallery">
-            <div class="galleria-4"></div>
-            <div class="galleria-5"></div>
-            <div class="galleria-6"></div>
+
+          <div class="col-12 col-lg-6">
+            <span>Elegante sport</span>
+
+            <p>No está permitido usar azul marino ni tonalidades similares.</p>
           </div>
         </div>
       </section>
 
       <!-- CIERRE -->
-      <section class="cierre" id="final">
-        <div class="content reveal">
-          <p class="frase-cierre">UNA NOCHE PARA RECORDAR</p>
+      <section class="cierre">
+        <div class="content reveal">        
+
           <h2>¡Te espero!</h2>
-          <p>Gracias por ser parte de este momento tan especial.</p>
-          <div class="cierre-nombre">Eluney</div>
-          <p class="cierre-dato">09 · 01 · 2027</p>
+          <p>
+            Lo más lindo de este día será poder compartirlo con vos y guardar
+            juntos un recuerdo inolvidable. Tu presencia es mi mejor regalo.<p>
+            <i class="fa-solid fa-heart p-2"></i>
+
+              <p>
+            Pero si además querés tener un detalle conmigo y no sabés qué
+            regalarme, podés hacerlo a través de una transferencia. Lo voy a
+            recibir con muchísimo cariño.
+          </p>
+          <span>ALias: nombre</span>
+         
         </div>
       </section>
     </main>
+
     <footer>
-      <span>CON CARIÑO · ELUNEY</span>
+      
       <a href="#inicio">VOLVER AL INICIO ↑</a>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
   </body>
 </html>

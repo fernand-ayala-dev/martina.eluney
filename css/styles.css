@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
-
-
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&display=swap");
 :root {
   --azul: #101d35;
   --azul-profundo: #0a1427;
@@ -14,8 +14,8 @@
 
   --borde: rgba(192, 197, 206, 0.35);
 
-  --titulo: "Cormorant Garamond", serif;
-  --nombre: ".mperial-script-regular", cursive; 
+  --titulo: "Agrave Pro", cursive;
+  --nombre: "Parisienne", cursive;
   --cuerpo: "Montserrat", sans-serif;
 }
 
@@ -31,31 +31,23 @@ html {
 
 body {
   position: relative;
-  min-height: 100vh;
-  background: var(--azul);
-  color: var(--blanco);
+  min-height: 400vh;
+  color: var(--plata-clara);
   font-family: var(--cuerpo);
   font-weight: 300;
   overflow-x: hidden;
 }
 
-.container {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-    background: url("../img/edit2.jpg") 
-    cover no-repeat 
-}
-
-
 main {
   position: relative;
   z-index: 1;
+  padding: 2rem;
+  text-align: center;
 }
 
 section {
   width: 100%;
-  padding: 100px 8%;
+  padding: 1rem;
   text-align: center;
   position: relative;
 }
@@ -182,80 +174,86 @@ section {
   }
 }
 
+.reveal {
+  font-family: var(--titulo);
+  font-size: clamp(4rem, 10vw, 7rem);
+  color: var(--blanco);
 
-#inicio {
-  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(35px);
+
+  animation: aparecerNombre 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes aparecerNombre {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.primera {
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 8%;
-  position: relative;
-  isolation: isolate;
+}
 
-  background: radial-gradient(
-    ellipse at center,
-    rgba(28, 48, 79, 0.45),
-    transparent 70%
-  );
+.frase {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.quince {
+  font-size: 2rem;
+  font-family: var(--cuerpo);
+}
+
+h1 {
+  font-family: var(--nombre);
+  font-size: 6rem;
+  padding-top: 15rem;
 }
 
 #inicio::before {
   content: "";
-  position:absolute;
+  position: absolute;
   inset: 0;
-  background: url("../img/foto-fondo.jpeg") center / cover no-repeat;
+  background: url("../img/foto-fondo.jpeg") top / cover no-repeat;
   opacity: 0.35;
   z-index: -1;
 }
 
-
-
-#inicio .row {
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;  
-  gap: 25px;
-}
-
-#inicio .row > div {
-  width: 100%;
-  
-   
-}
-
-.frase p {
-  color: var(--plateado);
-  font-size: 18px;
-  letter-spacing: 15px;
-  text-align: center;
-}
-
-/* Nombre principal */
-
-#inicio h1 {
-  font-family: "Imperial Script", cursive;
-  
-  font-weight: 300;
-  padding-top: 12rem;
-
+.frase {
   color: var(--plata-clara);
- 
-
-  text-shadow: 0 0 30px rgb(255, 255, 255);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
-#inicio h1::after {
+.segunda h2 {
+  font-family: var(--titulo);
+}
+.segunda {
+  outline: 1px solid rgba(192, 197, 206, 0.4);
+  outline-offset: 9px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+  padding: 3rem;
+}
+.segunda h2::after {
   content: "";
   display: block;
 
-  width: 100px;
-  height: 1px;
+  width: 180px;
+  height: 1.5px;
 
-  margin: 20px auto;
+  margin: 12px auto;
 
   background: linear-gradient(
     to right,
@@ -265,31 +263,11 @@ section {
   );
 }
 
-#inicio h1 + p {
-  font-family: var(--titulo);
-  font-size: 32px;
-  letter-spacing: 6px;
-  color: var(--plateado);
+.tercera-foto h2 {
+  padding: 1rem;
+  font-family: var(--nombre);
+  font-size: 2rem;
 }
-
-/* Fecha */
-
-.hero-date {
-  font-family: var(--titulo);
-  font-size: clamp(30px, 5vw, 45px);
-  letter-spacing: 9px;
-  color: var(--plateado);
-  margin-top: 15px;
-}
-
-.hero-date span {
-  color: var(--blanco);
-  padding: 0 5px;
-}
-
-/* ==================================================
-   05. FOTOGRAFÍA PRINCIPAL
-================================================== */
 
 .foto-principal {
   display: flex;
@@ -300,7 +278,7 @@ section {
 
 .foto-prin {
   width: min(75vw, 380px);
-  height: 490px;
+  height: 250px;
 
   background: url("../img/edit3.jpg") center 35% / cover no-repeat;
 
@@ -322,85 +300,18 @@ section {
   justify-content: center;
   align-items: center;
   gap: 15px;
-
   color: var(--plateado);
   font-size: 10px;
   letter-spacing: 4px;
+  padding: 3px;
 }
 
 .small-line {
   color: var(--plateado);
 }
 
-/* ==================================================
-   06. SECCIONES Y TÍTULOS GENERALES
-================================================== */
-
-section:not(#inicio) {
-  padding-top: 110px;
-  padding-bottom: 110px;
-  
-}
-
-section > p:first-child,
-.eyebrow {
-  color: var(--plateado);
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-
-h2 {
-  font-family: var(--titulo);
-  font-size: clamp(38px, 5vw, 58px);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--blanco);
-  margin-bottom: 2px;
-}
-
-h2 em {
-  color: var(--plateado);
-  font-weight: 300;
-}
-
-section > p {
-  color: var(--texto);
-  font-size: 14px;
-  line-height: 2;
-}
-
-.body-copy {
-  max-width: 550px;
-  margin: 0 auto 35px;
-}
-
-/* ==================================================
-   07. DETALLES DECORATIVOS
-================================================== */
-
-section:not(#inicio)::before {
-  content: "✧";
-  display: block;
-
-  color: var(--plateado);
-  font-size: 23px;
-
-  margin-bottom: 30px;
-  opacity: 0.7;
-}
-
-/* ==================================================
-   08. CUENTA REGRESIVA
-================================================== */
-
 .countdown-section {
-  background: linear-gradient(
-    135deg,
-    rgba(28, 48, 79, 0.95),
-    rgba(10, 20, 39, 0.95)
-  );
+  background: linear-gradient(135deg, rgb(28, 48, 79), rgba(10, 20, 39, 0.95));
 
   border-top: 1px solid var(--borde);
   border-bottom: 1px solid var(--borde);
@@ -429,6 +340,7 @@ section:not(#inicio)::before {
   padding: 25px 15px;
 
   border: 1px solid rgba(192, 197, 206, 0.5);
+
   background: rgba(255, 255, 255, 0.025);
 
   transition:
@@ -444,7 +356,7 @@ section:not(#inicio)::before {
 .count-item strong {
   display: block;
 
-  font-family: var(--titulo);
+  font-family: var(--cuerpo);
   font-size: 52px;
   font-weight: 400;
   color: var(--blanco);
@@ -452,9 +364,8 @@ section:not(#inicio)::before {
 
 .count-item span {
   display: block;
-
-  font-size: 9px;
-  letter-spacing: 3px;
+  font-family: var(--cuerpo);
+  font-size: 1rem;
   color: var(--plateado);
 
   margin-top: 8px;
@@ -466,286 +377,310 @@ section:not(#inicio)::before {
   letter-spacing: 2px;
 }
 
-/* ==================================================
-   09. LUGAR Y HORARIO
-================================================== */
-
-main > section:nth-of-type(5) {
-  background: rgba(20, 36, 64, 0.65);
+.tercera {
+  background-color: var(--azul-medio);
 }
 
-main > section:nth-of-type(5) a {
-  display: inline-block;
-
+.segunda,
+.cuarta-regresiva {
+  background: linear-gradient(
+    135deg,
+    var(--azul-profundo) 2%,
+    #1c315283 50%,
+    #06244d93 80%
+  );
+}
+.cuarta-regresiva::before {
+  content: "☆";
+  display: block;
   color: var(--plateado);
-  text-decoration: none;
-
-  border: 1px solid var(--borde);
-  padding: 12px 28px;
-
-  margin: 15px 0 30px;
-
-  font-size: 11px;
-  letter-spacing: 3px;
-
-  transition: all 0.4s ease;
+  font-size: 40px;
+  opacity: 0.5;
+}
+.cuarta-regresiva p {
+  font-family: var(--nombre);
+  letter-spacing: 0;
+  font-size: 2.5rem;
 }
 
-main > section:nth-of-type(5) a:hover {
-  background: var(--plateado);
-  color: var(--azul);
+.quinta-datos {
+  background-color: var(--azul-medio);
+  background: linear-gradient(
+    135deg,
+    var(--azul-profundo) 2%,
+    #1c315283 50%,
+    #06244d93 80%
+  );
+  border: 1px solid rgba(192, 197, 206, 0.5);
 }
-
-main > section:nth-of-type(5) span {
+.quinta-datos .col-12:nth-child(2)::before {
+  content: "";
   display: block;
 
-  font-family: var(--titulo);
-  font-size: 60px;
-  color: var(--plateado);
+  width: 180px;
+  height: 1.5px;
 
-  margin: 15px 0;
-}
+  margin: 12px auto ;
 
-/* ==================================================
-   10. CÓDIGO DE VESTIMENTA
-================================================== */
-
-main > section:nth-of-type(6) {
-  background: rgba(16, 29, 53, 0.7);
-}
-
-main > section:nth-of-type(6) span {
-  display: inline-block;
-
-  font-family: var(--titulo);
-  font-size: 32px;
-  color: var(--plateado);
-
-  margin: 15px 0 25px;
-}
-
-main > section:nth-of-type(6) p {
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-.icono-vestimenta {
-  color: #c0c5ce;
-  font-size: 35px;
-  margin-bottom: 15px;
-}
-.icono-vestimenta svg {
-    stroke: #c0c5ce;
-    fill: none;
-}
-
-/* ==================================================
-   11. GALERÍA DE FOTOS
-================================================== */
-
-section.gallery {
   background: linear-gradient(
-    180deg,
-    rgba(28, 48, 79, 0.45),
-    rgba(10, 20, 39, 0.75)
+    to right,
+    transparent,
+    var(--plateado),
+    transparent
   );
+}
+.quinta-datos h2{
+  font-family: var(--nombre);
+  font-size: 2rem;
 
+}
+.quinta-datos p{
+  font-size: 1rem;
+  font-family: var(--cuerpo);
+  padding: 0;
+}
+
+
+.hora {
+  border: 1px solid rgba(192, 197, 206, 0.5);
+  padding: 2px 15px;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-family: var(--cuerpo);
+  box-shadow: 0 0 12px rgba(192, 197, 206, 0.15);
+  letter-spacing: 2px;
+}
+
+em {
+  font-size: 0.8rem;
+}
+
+.btn {
+  color: var(--plateado);
+  border: 1px solid var(--plateado);
+  padding: 10px 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--plateado);
+  color: var(--azul-profundo);
+  box-shadow: 0 0 15px rgba(192, 197, 206, 0.4);
+}
+
+.galeria-section {
+  
+  background: linear-gradient(
+    135deg,
+    var(--azul-profundo) 2%,
+    #304c7a83 50%,
+    #06244d00 80%
+  );
+  border: 1px solid rgba(192, 197, 206, 0.5);
+}
+.galeria-section .col-12:nth-child(2)::before {
+  content: "";
+  display: block;
+
+  width: 180px;
+  height: 1.5px;
+  margin: 12px auto ;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--plateado),
+    transparent
+  );
+}
+
+
+.galeria-section {
+ 
+  padding: 80px 20px;
+  text-align: center;
   overflow: hidden;
 }
 
-/* Contenedor */
+/* Título */
+.galeria-section h2 {
+  font-family: var(--nombre);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+}
 
-section.gallery > .section-inner {
-  max-width: 1050px;
+.galeria-section .body-copy {
+  font-family: var(--cuerpo);
+  color: var(--plateado);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
+}
+
+/* Galería */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 180px);
+  gap: 12px;
+  max-width: 1000px;
   margin: auto;
 }
 
-/* Diseño tipo collage */
-
-section.gallery .gallery {
-  display: grid;
-
-  grid-template-columns: 1.2fr 0.8fr;
-  grid-template-rows: 230px 230px;
-
-  gap: 18px;
-
-  max-width: 850px;
-  margin: 45px auto 0;
-}
-
-/* Fotografías */
-
-.galleria-1,
-.galleria-2,
-.galleria-3,
-.galleria-4,
-.galleria-5,
-.galleria-6 {
-  position: relative;
-  overflow: hidden;
-
-  border: 1px solid rgba(192, 197, 206, 0.65);
-  outline: 1px solid rgba(192, 197, 206, 0.15);
-  outline-offset: 5px;
-
-  background-color: var(--azul-claro);
+/* Imágenes */
+.gallery-grid > div {
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(192, 197, 206, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 
-  transition:
-    transform 0.5s ease,
-    filter 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  overflow: hidden;
 }
 
-/* Reemplazá las rutas por tus fotografías */
-
+/* Distribución irregular */
 .galleria-1 {
+  grid-column: 1 / 3;
   grid-row: 1 / 3;
-
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/edit3.jpg");
- 
+  background-image: url("../img/elu-adolecente.jpeg");
 }
 
 .galleria-2 {
-  
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-   url("../img/edit2.jpg");
+  grid-column: 3;
+  grid-row: 1;
+  background-image: url("../img/elu-adolecente2.jpeg");
+ 
 }
 
 .galleria-3 {
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/edit2.jpg");
+  grid-column: 4;
+  grid-row: 1 / 3;
+  background-image: url("../img/elu-niña.jpeg");
 }
 
 .galleria-4 {
-
- grid-row: 1 /3;
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/edit3.jpg");
-   background-position: center;
-   background-position: left;
-   background-size: cover;
-  }
+  grid-column: 3;
+  grid-row: 2;
+  background-image: url("../img/elu-niña2.jpeg");
+}
 
 .galleria-5 {
-  grid-row: 1 /2;
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-   url("../img/elu-bebe.jpeg");
-   background-position: center;
-  
-   background-size: cover;
+  grid-column: 1 / 3;
+  grid-row: 3;
+  background-image: url("../img/elu-niña3.jpeg");
 }
 
 .galleria-6 {
-  background-image:
-    linear-gradient(rgba(10, 20, 39, 0.05), rgba(10, 20, 39, 0.15)),
-    url("../img/edit2.jpg");
-     background-position: center;
-  
-   background-size: cover;
-}
-/* Efecto al pasar el mouse */
+    grid-column: 3 / 5;
+  grid-row: 3;
 
-.galleria-1:hover,
-.galleria-2:hover,
-.galleria-3:hover,
-.galleria-4:hover,
-.galleria-5:hover,
-.galleria-6:hover{
+  background-image: url("../img/elu-bebe.jpeg");
+  background-position: top; 
+  background-repeat: no-repeat;
+}
+
+/* Efecto hover */
+.gallery-grid > div:hover {
   transform: scale(1.025);
-  filter: brightness(1.08);
+  box-shadow: 0 10px 30px rgba(192, 197, 206, 0.2);
+  z-index: 2;
 }
 
-/* Etiquetas de fotografías */
 
-.galleria-1 span,
-.galleria-2 span,
-.galleria-3 span,
-.galleria-4 span,
-.galleria-5 span,
-.galleria-6 span {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-
-  color: var(--blanco);
-  font-size: 9px;
-  letter-spacing: 3px;
-
-  padding: 8px 12px;
-
-  background: rgba(10, 20, 39, 0.65);
-  border: 1px solid rgba(192, 197, 206, 0.45);
-}
-
-/* ==================================================
-   12. CIERRE DE LA INVITACIÓN
-================================================== */
-
-.cierre {
-  min-height: 75vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: radial-gradient(
-    ellipse at center,
-    rgba(28, 48, 79, 0.8),
-    transparent 70%
+.septima-vestimenta {
+  background: linear-gradient(
+    135deg,
+    var(--azul-profundo),
+    #1c3152,
+    var(--azul-profundo)
   );
 
-  border-top: 1px solid var(--borde);
+  padding: 75px 20px;
+  text-align: center;
+  color: var(--plateado);
 }
 
-.cierre .content {
-  max-width: 700px;
+/* Contenedor */
+.septima-vestimenta .row {
+  max-width: 1000px;
   margin: auto;
+  row-gap: 30px;
 }
 
-.frase-cierre {
-  color: var(--plateado);
-  font-size: 10px;
-  letter-spacing: 5px;
-  margin-bottom: 25px;
+/* Título */
+.septima-vestimenta h2 {
+  font-family: var(--nombre);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
-.cierre h2 {
-  font-size: clamp(55px, 8vw, 85px);
+/* Icono de vestimenta */
+.icono-vestimenta {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+
+  /* Convierte el icono oscuro en blanco */
+  filter: brightness(0) invert(1);
+
+  opacity: 0.9;
+  transition: all 0.4s ease;
 }
 
-.cierre .content > p:not(.frase-cierre) {
-  color: var(--texto);
-  font-size: 13px;
-  line-height: 2;
+.icono-vestimenta:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  filter: brightness(0) invert(1)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
-.cierre-nombre {
-  font-family: var(--titulo);
-  font-size: 75px;
+/* Código de vestimenta */
+.septima-vestimenta span {
+  display: inline-block;
+  font-family: var(--nombre);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Aclaración */
+.septima-vestimenta p {
+  font-family: var(--cuerpo);
+  font-size: 0.9rem;
+  line-height: 1.9;
   font-weight: 300;
-  color: var(--plateado);
-
-  margin: 30px 0 15px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 380px;
+  margin: 0 auto;
 }
 
-.cierre-dato {
-  letter-spacing: 5px;
-  color: var(--plateado) !important;
-  font-size: 12px !important;
+.cierre p {
+  font-family: var(--cuerpo);
+  font-size: 1rem;
+}
+.cierre span{
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: oblique;
+  font-size: 1rem;
+  margin-bottom: 0px;
 }
 
-/* ==================================================
-   13. FOOTER
-================================================== */
+.cierre h2{
+  font-family: var(--nombre);
+ 
+}
+
+
+
 
 footer {
   position: relative;
@@ -780,283 +715,60 @@ footer a:hover {
   color: var(--blanco);
 }
 
-/* ==================================================
-   14. ANIMACIONES DE APARICIÓN
-================================================== */
-
-.reveal {
-  animation: aparecer 1.2s ease both;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
+/* Tablet */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 180px);
+    gap: 10px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==================================================
-   15. TABLETS
-   600px A 1023px
-================================================== */
-
-@media (min-width: 600px) and (max-width: 1023px) {
-  section {
-    padding: 85px 6%;
+  .galleria-1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
   }
 
-  #inicio h1 {
-    font-size: 100px;
+  .galleria-2 {
+    grid-column: 2;
+    grid-row: 1;
   }
 
-  .foto-prin {
-    width: 310px;
-    height: 420px;
+  .galleria-3 {
+    grid-column: 2;
+    grid-row: 2;
   }
 
-  .countdown {
-    gap: 15px;
+  .galleria-4 {
+    grid-column: 1;
+    grid-row: 3;
   }
 
-  .count-item {
-    min-width: 115px;
+  .galleria-5 {
+    grid-column: 2;
+    grid-row: 3;
   }
 
-  section.gallery .gallery {
-    grid-template-rows: 200px 200px;
-    gap: 15px;
+  .galleria-6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
   }
 }
 
-/* ==================================================
-   16. PC Y NOTEBOOK
-   DESDE 1024px
-================================================== */
+/* Celulares */
+@media (max-width: 480px) {
+  .galeria-section {
+    padding: 60px 15px;
+  }
+
+  .gallery-grid {
+    grid-template-rows: repeat(4, 135px);
+    gap: 8px;
+  }
+}
 
 @media (min-width: 1024px) {
   #inicio {
     min-height: 100vh;
-  }
-
-  #inicio .row {
-    max-width: 900px;
-  }
-
-  .foto-prin {
-    width: 380px;
-    height: 490px;
-  }
-
-  section:not(#inicio) {
-    padding: 120px 15%;
-  }
-
-  .countdown {
-    gap: 30px;
-  }
-
-  .count-item {
-    min-width: 145px;
-    padding: 30px;
-  }
-
-  section.gallery .gallery {
-    grid-template-rows: 260px 260px;
-    gap: 22px;
-  }
-}
-
-/* ==================================================
-   17. CELULARES
-   HASTA 599px
-================================================== */
-
-@media (max-width: 599px) {
-  section {
-    padding: 70px 20px;
-  }
-
-  /* Portada */
-
-  #inicio {
-    min-height: 90vh;
-    padding: 60px 20px;
-  }
-
-  #inicio .row {
-    gap: 25px;
-  }
-
-  .frase {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  #inicio h1 {
-    font-size: 75px;
-    letter-spacing: 3px;
-  }
-
-  #inicio h1 + p {
-    font-size: 25px;
-    letter-spacing: 4px;
-  }
-
-  .hero-date {
-    font-size: 29px;
-    letter-spacing: 4px;
-  }
-
-  /* Fotografía */
-
-  .foto-prin {
-    width: 240px;
-    height: 330px;
-  }
-
-  .foto-caption {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-
-  /* Títulos */
-
-  section:not(#inicio) {
-    padding: 75px 20px;
-  }
-
-  h2 {
-    font-size: 37px;
-  }
-
-  section > p {
-    font-size: 13px;
-  }
-
-  section > p:first-child,
-  .eyebrow {
-    font-size: 9px;
-    letter-spacing: 3px;
-  }
-
-  /* Cuenta regresiva */
-
-  .countdown {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-    max-width: 340px;
-
-    margin: 35px auto;
-  }
-
-  .count-item {
-    min-width: 0;
-    padding: 20px 10px;
-  }
-
-  .count-item strong {
-    font-size: 40px;
-  }
-
-  .count-item span {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-
-  .countdown-note {
-    font-size: 10px;
-    line-height: 1.8;
-  }
-
-  /* Lugar y horario */
-
-  main > section:nth-of-type(5) span {
-    font-size: 48px;
-  }
-
-  /* Vestimenta */
-
-  main > section:nth-of-type(6) span {
-    font-size: 27px;
-  }
-
-  /* Galería */
-
-  section.gallery .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 300px 150px;
-
-    gap: 12px;
-    margin-top: 35px;
-  }
-
-  .galleria-1 {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-
-  .galleria-2,
-  .galleria-3 {
-    grid-row: 2;
-  }
-
-  .galleria-1 span,
-  .galleria-2 span,
-  .galleria-3 span {
-    font-size: 8px;
-    bottom: 10px;
-    left: 10px;
-  }
-
-  /* Cierre */
-
-  .cierre {
-    min-height: 65vh;
-  }
-
-  .cierre-nombre {
-    font-size: 60px;
-  }
-
-  .cierre .content > p:not(.frase-cierre) {
-    font-size: 12px;
-  }
-
-  /* Footer */
-
-  footer {
-    justify-content: center;
-    text-align: center;
-    padding: 25px 15px;
-    font-size: 8px;
-  }
-}
-
-/* ==================================================
-   18. REDUCIR MOVIMIENTO
-================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .fondo-animado span {
-    animation: none;
-  }
-
-  .reveal {
-    animation: none;
-  }
-
-  * {
-    transition-duration: 0.01ms !important;
+    background-position: bottom;
   }
 }
